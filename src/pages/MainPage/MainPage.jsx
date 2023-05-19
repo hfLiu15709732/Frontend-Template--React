@@ -9,6 +9,8 @@ export default function MainPage() {
   const { Header, Footer, Sider, Content } = Layout;
   const navigating=useNavigate();
   const urlMap=useLocation();
+  const urlMapChinese=["","添加设备页面","设备列表页面","信息筛选页面","个人中心页面"];
+  const urlMapEng=["","adding","list","dashboard","setting"];
 
   const [siderVisible, setSiderVisible] = useState(false);
   const [callBackVisible, setCallBackVisible] = useState(false);
@@ -112,7 +114,7 @@ const routerChange=(val)=>{
                                     }}
                                 />
                                 <Avatar color="orange" size="small">
-                                    YJ
+                                    LHF
                                 </Avatar>
                             </>
                         }
@@ -128,13 +130,13 @@ const routerChange=(val)=>{
                         style={{
                             marginBottom: '24px',
                         }}
-                        routes={['首页', '下一页', '上一页', '详情页']}
+                        routes={['首页', urlMapChinese[urlMapEng.indexOf(urlMap.pathname.split("/")[2])]]}
                     />
                     <div
                         style={{
                             borderRadius: '10px',
                             border: '1px solid var(--semi-color-border)',
-                            height: '376px',
+                            height: '480px',
                             padding: '32px',
                         }}
                     >
