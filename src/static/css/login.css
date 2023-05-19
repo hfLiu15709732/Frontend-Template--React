@@ -19,3 +19,19 @@
   margin-bottom: 28px;
   width: 400px;
 }
+.loginPage .toRegister {
+  font-size: 14px !important;
+  color: rgba(var(--semi-green-4), 1) !important;
+}
+.loginPage .semi-card-header-wrapper {
+  align-items: center;
+}
+.loginPage .iptSigal {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.siderTitleLogin {
+  font-size: 18px;
+  color: rgba(var(--semi-blue-5), 1);
+  font-weight: 700;
+}

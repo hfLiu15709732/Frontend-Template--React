@@ -1,16 +1,25 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { Layout, Nav, Button, Breadcrumb, Skeleton, Avatar, SideSheet, Modal } from '@douyinfe/semi-ui';
-import { IconBell, IconHelpCircle, IconBytedanceLogo, IconHome, IconHistogram, IconLive, IconSetting } from '@douyinfe/semi-icons';
+import { IconBell, IconHelpCircle, IconBytedanceLogo, IconCustomize, IconHistogram, IconDesktop, IconSetting } from '@douyinfe/semi-icons';
 import "../../static/css/mainPage.css"
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 export default function MainPage() {
 
   const { Header, Footer, Sider, Content } = Layout;
+  const navigating=useNavigate();
+  const urlMap=useLocation();
 
   const [siderVisible, setSiderVisible] = useState(false);
   const [callBackVisible, setCallBackVisible] = useState(false);
   const [questionVisible, setQuestionVisible] = useState(false);
   const [postMailVisible, setPostMailVisible] = useState(false);
+
+
+
+  //页面局部状态管理区域
+
+
   const siderChange= () => {
       setSiderVisible(!siderVisible);
   };
@@ -40,18 +49,36 @@ const closeQuestionDialog=()=>{
 
 
 
+//组件交互回调函数区域
+
+
+
+
+
+
+const routerChange=(val)=>{
+    navigating(`/index/${val.itemKey}`)
+}
+
+
+
+//业务函数区域
+
+
+
   return (
     <>
         <Layout style={{ border: '1px solid var(--semi-color-border)' }} className='mainPageLayout'>
             <Sider style={{ backgroundColor: 'var(--semi-color-bg-1)' }}>
                 <Nav
-                    defaultSelectedKeys={['/adding']}
+                    onClick={routerChange}
+                    defaultSelectedKeys={[urlMap.pathname.split("/")[2]]}
                     style={{ maxWidth: 220, height: '100%' }}
                     items={[
-                        { itemKey: '/adding', text: '添加设备', icon: <IconHome size="large" /> },
-                        { itemKey: '/list', text: '列表信息', icon: <IconHistogram size="large" /> },
-                        { itemKey: 'Live', text: '信息筛选', icon: <IconLive size="large" /> },
-                        { itemKey: 'Setting', text: '个人设置', icon: <IconSetting size="large" /> },
+                        { itemKey: 'adding', text: '添加设备', icon: <IconCustomize  size="large" /> },
+                        { itemKey: 'list', text: '列表信息', icon: <IconHistogram size="large" /> },
+                        { itemKey: 'dashboard', text: '信息筛选', icon: <IconDesktop size="large" /> },
+                        { itemKey: 'setting', text: '个人设置', icon: <IconSetting size="large" /> },
                     ]}
                     header={{
                         logo: <img src="https://www.electronjs.org/zh/assets/img/logo.svg" />,
@@ -111,10 +138,7 @@ const closeQuestionDialog=()=>{
                             padding: '32px',
                         }}
                     >
-                        <Skeleton placeholder={<Skeleton.Paragraph rows={2} />} loading={true}>
-                            <p>Hi, Bytedance dance dance.</p>
-                            <p>Hi, Bytedance dance dance.</p>
-                        </Skeleton>
+                        <Outlet/>
                     </div>
                 </Content>
                 <Footer
