@@ -3,6 +3,7 @@ import Login from '../pages/Login/Login'
 import MainPage from '../pages/MainPage/MainPage'
 import AddingPage from '../pages/AddingPage/AddingPage';
 import ListPage from '../pages/ListPage/ListPage';
+import ListPageMobile from '../pages/ListPage/ListPageMobile';
 import DashBoard from '../pages/DashBoard/DashBoard';
 import SettingPage from '../pages/SettingPage/SettingPage';
 
@@ -24,8 +25,12 @@ let routerTab=[
 				element:<AddingPage/>
 			},
 			{
-				path:"/index/list",
+				path:"/index/listDesktop",
 				element:<ListPage/>
+			},
+			{
+				path:"/index/listMobile",
+				element:<ListPageMobile/>
 			},
 			{
 				path:"/index/dashboard",

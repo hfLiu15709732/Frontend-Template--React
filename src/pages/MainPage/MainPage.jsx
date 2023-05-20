@@ -9,8 +9,8 @@ export default function MainPage() {
   const { Header, Footer, Sider, Content } = Layout;
   const navigating=useNavigate();
   const urlMap=useLocation();
-  const urlMapChinese=["","添加设备页面","设备列表页面","信息筛选页面","个人中心页面"];
-  const urlMapEng=["","adding","list","dashboard","setting"];
+  const urlMapChinese=["","添加设备页面","桌面端设备列表页面","移动端设备列表页面","信息筛选页面","个人中心页面"];
+  const urlMapEng=["","adding","listDesktop","listMobile","dashboard","setting"];
 
   const [siderVisible, setSiderVisible] = useState(false);
   const [callBackVisible, setCallBackVisible] = useState(false);
@@ -78,7 +78,8 @@ const routerChange=(val)=>{
                     style={{ maxWidth: 220, height: '100%' }}
                     items={[
                         { itemKey: 'adding', text: '添加设备', icon: <IconCustomize  size="large" /> },
-                        { itemKey: 'list', text: '列表信息', icon: <IconHistogram size="large" /> },
+                        { itemKey: 'listDesktop', text: '桌面端列表信息', icon: <IconHistogram size="large" /> },
+                        { itemKey: 'listMobile', text: '移动端列表信息', icon: <IconHistogram size="large" /> },
                         { itemKey: 'dashboard', text: '信息筛选', icon: <IconDesktop size="large" /> },
                         { itemKey: 'setting', text: '个人设置', icon: <IconSetting size="large" /> },
                     ]}
@@ -136,8 +137,9 @@ const routerChange=(val)=>{
                         style={{
                             borderRadius: '10px',
                             border: '1px solid var(--semi-color-border)',
-                            height: '480px',
+                            minHeight: '480px',
                             padding: '32px',
+                            paddingTop:"16px",
                         }}
                     >
                         <Outlet/>
