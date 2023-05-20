@@ -10,7 +10,7 @@ export default function MainPage() {
   const navigating=useNavigate();
   const urlMap=useLocation();
   const urlMapChinese=["","添加设备页面","桌面端设备列表页面","移动端设备列表页面","信息筛选页面","个人中心页面"];
-  const urlMapEng=["","adding","listDesktop","listMobile","dashboard","setting"];
+  const urlMapEng=["","adding","listDesktop","listMobile","filter","setting"];
 
   const [siderVisible, setSiderVisible] = useState(false);
   const [callBackVisible, setCallBackVisible] = useState(false);
@@ -71,7 +71,7 @@ const routerChange=(val)=>{
   return (
     <>
         <Layout style={{ border: '1px solid var(--semi-color-border)' }} className='mainPageLayout'>
-            <Sider style={{ backgroundColor: 'var(--semi-color-bg-1)' }}>
+            <Sider style={{ backgroundColor: 'var(--semi-color-bg-1)' }} breakpoint={["md"]}>
                 <Nav
                     onClick={routerChange}
                     defaultSelectedKeys={[urlMap.pathname.split("/")[2]]}
@@ -80,7 +80,7 @@ const routerChange=(val)=>{
                         { itemKey: 'adding', text: '添加设备', icon: <IconCustomize  size="large" /> },
                         { itemKey: 'listDesktop', text: '桌面端列表信息', icon: <IconHistogram size="large" /> },
                         { itemKey: 'listMobile', text: '移动端列表信息', icon: <IconHistogram size="large" /> },
-                        { itemKey: 'dashboard', text: '信息筛选', icon: <IconDesktop size="large" /> },
+                        { itemKey: 'filter', text: '信息筛选', icon: <IconDesktop size="large" /> },
                         { itemKey: 'setting', text: '个人设置', icon: <IconSetting size="large" /> },
                     ]}
                     header={{

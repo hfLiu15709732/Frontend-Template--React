@@ -1,0 +1,15 @@
+.filterPage .filterData .btnGroup {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 30px !important;
+}
+.filterPage .filterData .btn {
+  margin-right: 20px !important;
+}
+.filterPage .dividerText {
+  color: rgba(var(--semi-blue-5), 1);
+}
+.filterPage .dividerText .title {
+  margin-left: 10px !important;
+  font-weight: 700;
+}

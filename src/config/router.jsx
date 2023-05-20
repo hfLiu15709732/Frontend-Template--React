@@ -4,8 +4,8 @@ import MainPage from '../pages/MainPage/MainPage'
 import AddingPage from '../pages/AddingPage/AddingPage';
 import ListPage from '../pages/ListPage/ListPage';
 import ListPageMobile from '../pages/ListPage/ListPageMobile';
-import DashBoard from '../pages/DashBoard/DashBoard';
 import SettingPage from '../pages/SettingPage/SettingPage';
+import FilterPage from '../pages/Filter/FilterPage';
 
 let routerTab=[
 	{
@@ -33,8 +33,8 @@ let routerTab=[
 				element:<ListPageMobile/>
 			},
 			{
-				path:"/index/dashboard",
-				element:<DashBoard/>
+				path:"/index/filter",
+				element:<FilterPage/>
 			},
 			{
 				path:"/index/setting",

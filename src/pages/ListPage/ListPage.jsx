@@ -7,15 +7,22 @@ export default function ListPage() {
   return (
     <div className='listPage'>
       <Tabs>
-        <TabPane tab={<span><IconDesktop />CPU</span>} itemKey="1" >
-            <TableComponents/>
+        <TabPane tab={<span><IconDesktop />CPU-R23</span>} itemKey="1" >
+            <TableComponents itemKey={1}/>
         </TabPane>
-        <TabPane tab={<span><IconDesktop />GPU</span>} itemKey="2" >
-            <TableComponents/>
+        <TabPane tab={<span><IconDesktop />CPU-R20</span>} itemKey="2" >
+            <TableComponents itemKey={2}/>
         </TabPane>
-        <TabPane tab={<span><IconDesktop />OTHER</span>} itemKey="3" >
-          <TableComponents/>
+        <TabPane tab={<span><IconDesktop />CPU-R15</span>} itemKey="3" >
+            <TableComponents itemKey={3}/>
         </TabPane>
+        <TabPane tab={<span><IconDesktop />GPU-TimeSpy</span>} itemKey="4" >
+            <TableComponents itemKey={4}/>
+        </TabPane>
+        <TabPane tab={<span><IconDesktop />GPU-PassMark</span>} itemKey="5" >
+            <TableComponents itemKey={5}/>
+        </TabPane>
+
     </Tabs>
     </div>
   )

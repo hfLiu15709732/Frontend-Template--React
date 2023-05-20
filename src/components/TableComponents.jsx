@@ -1,48 +1,32 @@
-import React, { useMemo } from 'react'
-import { Table, Avatar } from '@douyinfe/semi-ui';
+import React, { useEffect, useMemo } from 'react'
+import { Table, Avatar, Button } from '@douyinfe/semi-ui';
 import { IconMore } from '@douyinfe/semi-icons';
 
 
-export default function TableComponents() {
+export default function TableComponents(props) {
 
 
 
     const columns = [
         {
-            title: '标题',
+            title: '设备信息',
             dataIndex: 'name',
-            width: 400,
             render: (text, record, index) => {
                 return (
                     <div>
-                        <Avatar
-                            size="small"
-                            shape="square"
-                            src={record.nameIconSrc}
-                            style={{ marginRight: 12 }}
-                        ></Avatar>
+                        <Avatar size="small" shape="square" src={record.nameIconSrc} style={{ marginRight: 12 }}></Avatar>
                         {text}
                     </div>
                 );
             },
         },
         {
-            title: '大小',
+            title: '单核测试',
             dataIndex: 'size',
         },
         {
-            title: '所有者',
+            title: '多核测试',
             dataIndex: 'owner',
-            render: (text, record, index) => {
-                return (
-                    <div>
-                        <Avatar size="small" color={record.avatarBg} style={{ marginRight: 4 }}>
-                            {typeof text === 'string' && text.slice(0, 1)}
-                        </Avatar>
-                        {text}
-                    </div>
-                );
-            },
         },
         {
             title: '更新日期',
@@ -50,9 +34,27 @@ export default function TableComponents() {
         },
         {
             title: '',
-            dataIndex: 'operate',
+            dataIndex: 'detail',
+            width:"80px",
             render: () => {
-                return <IconMore />;
+                return <Button theme='solid' type='primary'>详情</Button>;
+            },
+        },
+        {
+            title: '',
+            dataIndex: 'edit',
+            width:"80px",
+            render: () => {
+                return <Button theme='solid' type='warning'>修改</Button>;
+            },
+        },
+
+        {
+            title: '',
+            dataIndex: 'delete',
+            width:"80px",
+            render: () => {
+                return <Button theme='solid' type='danger'>删除</Button>;
             },
         },
     ];
@@ -60,7 +62,7 @@ export default function TableComponents() {
         {
             key: '1',
             name: 'Semi Design 设计稿.fig',
-            nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png',
+            nameIconSrc: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1',
             size: '2M',
             owner: '姜鹏志',
             updateTime: '2020-02-02 05:13',
@@ -69,7 +71,7 @@ export default function TableComponents() {
         {
             key: '2',
             name: 'Semi Design 分享演示文稿',
-            nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+            nameIconSrc: 'https://ts1.cn.mm.bing.net/th/id/R-C.90ccbb626f2f4f9522d6b8028a62275b?rik=rh5Kuv6Wq7TcFw&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f00%2f97%2f65%2f0156f3261dba1d2.jpg&ehk=8aJj30dsQ1KSyicUc6vuSz8EK%2b1xKJkUNGVLtxNGKUo%3d&risl=&pid=ImgRaw&r=0',
             size: '2M',
             owner: '郝宣',
             updateTime: '2020-01-17 05:31',
@@ -179,6 +181,15 @@ export default function TableComponents() {
         }),
         []
     );
+
+
+
+
+
+
+    useEffect(()=>{
+        console.log(props.itemKey);
+    })
 
 
 
