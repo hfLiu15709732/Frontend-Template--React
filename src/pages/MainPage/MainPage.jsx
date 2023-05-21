@@ -94,7 +94,7 @@ const routerChange=(val)=>{
                         { itemKey: 'setting', text: '个人设置', icon: <IconSetting size="large" /> },
                     ]}
                     header={{
-                        logo: <img src="https://www.electronjs.org/zh/assets/img/logo.svg" />,
+                        logo: <img src="https://project-use-1316646528.cos.ap-nanjing.myqcloud.com/%E5%90%8E%E5%8F%B0%E6%A8%A1%E6%9D%BF%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8/%E7%BD%91%E7%AB%99%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/%E5%9B%BE%E7%89%87/react-logo.png" />,
                         text: '小程序运营后台',
                     }}
                     footer={{

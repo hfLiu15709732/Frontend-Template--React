@@ -24,7 +24,7 @@ export default function SettingPage() {
                     <Avatar 
                         alt='Card meta img'
                         size="default"
-                        src='https://demosc.chinaz.net/Files/pic/icons/6403/q1.png'
+                        src='https://tse1-mm.cn.bing.net/th/id/OIP-C.fp_l68B10zn31U5SLS72SAAAAA?pid=ImgDet&rs=1'
                     />
                 }
                 
@@ -43,7 +43,7 @@ export default function SettingPage() {
                     <Avatar 
                         alt='Card meta img'
                         size="default"
-                        src='https://i.52112.com/icon/256/20190506/38524/1836116.png'
+                        src='https://ts1.cn.mm.bing.net/th/id/R-C.7f52e5f78f8e82643c77d06f9e3ce15f?rik=UZogmZZpcxt7Bw&riu=http%3a%2f%2ficons.iconarchive.com%2ficons%2fjozef89%2fservices-flat%2f512%2fwebsite-icon.png&ehk=%2bohQI0HF2ZNq4%2bbm4edu%2f%2fcM2jDqj5o99MwwigIvLuk%3d&risl=&pid=ImgRaw&r=0'
                     />
                 }
                 
@@ -62,7 +62,7 @@ export default function SettingPage() {
                     <Avatar 
                         alt='Card meta img'
                         size="default"
-                        src='https://bpic.588ku.com/element_origin_min_pic/19/04/11/96aafe7b6bf42e3b06b410974b03f86f.jpg'
+                        src='https://tse3-mm.cn.bing.net/th/id/OIP-C.H1t3ScwgFnBH0yN5yyggAwHaHa?pid=ImgDet&rs=1'
                     />
                 }
                 
@@ -81,7 +81,7 @@ export default function SettingPage() {
                     <Avatar 
                         alt='Card meta img'
                         size="default"
-                        src='https://img.51miz.com/Element/00/89/35/78/d1d3c8d1_E893578_d6b37221.png'
+                        src='https://ekocrm.web.conselio.com/wp-content/uploads/sites/4/2017/08/icon_calendar.png'
                     />
                 }
                 
