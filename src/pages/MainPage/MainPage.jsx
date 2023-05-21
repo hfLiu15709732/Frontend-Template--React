@@ -115,6 +115,7 @@ const routerChange=(val)=>{
                                         color: 'var(--semi-color-text-2)',
                                         marginRight: '12px',
                                     }}
+                                    onClick={showPostMailDialog}
                                 />
                                 <Button
                                     theme="borderless"
@@ -123,8 +124,9 @@ const routerChange=(val)=>{
                                         color: 'var(--semi-color-text-2)',
                                         marginRight: '12px',
                                     }}
+                                    onClick={showQuestionDialog}
                                 />
-                                <Avatar color="orange" size="small">
+                                <Avatar color="orange" size="small" onClick={()=>{ navigating(`/index/setting`)}}>
                                     LHF
                                 </Avatar>
                             </>
