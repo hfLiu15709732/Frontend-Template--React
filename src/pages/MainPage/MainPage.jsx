@@ -1,5 +1,5 @@
-import React,{useEffect, useState} from 'react';
-import { Layout, Nav, Button, Breadcrumb, Skeleton, Avatar, SideSheet, Modal } from '@douyinfe/semi-ui';
+import React,{useState} from 'react';
+import { Layout, Nav, Button, Breadcrumb,  Avatar, SideSheet, Modal } from '@douyinfe/semi-ui';
 import { IconBell, IconHelpCircle, IconBytedanceLogo, IconCustomize, IconHistogram, IconDesktop, IconSetting } from '@douyinfe/semi-icons';
 import "../../static/css/mainPage.css"
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
@@ -35,19 +35,19 @@ export default function MainPage() {
 
   const showPostMailDialog = () => {
     setPostMailVisible(true);
-};
-const closePostMailDialog=()=>{
-    setPostMailVisible(false);
-}
+    };
+    const closePostMailDialog=()=>{
+        setPostMailVisible(false);
+    }
 
 
 
-const showQuestionDialog = () => {
-  setQuestionVisible(true);
-};
-const closeQuestionDialog=()=>{
-  setQuestionVisible(false);
-}
+    const showQuestionDialog = () => {
+    setQuestionVisible(true);
+    };
+    const closeQuestionDialog=()=>{
+    setQuestionVisible(false);
+    }
 
 
 
