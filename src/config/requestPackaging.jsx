@@ -6,8 +6,14 @@ import axios from "axios";
 axios.defaults.timeout = 100000;
 axios.defaults.baseURL = "http://test.mediastack.cn/";
 
+
+//基本上都是axios的封装与配置
+//但本项目是对axios包装了两层（一层是axios的api，一层是统一处理一级封装函数）；留出更多处理数据的空间，也相对更规范些
+//最终是将集中处理的函数默认暴露出去，直接在requestUse的集中请求文件中调用他即可
+//没了解可以看axios的中文文档：https://www.axios-http.cn/
+
 /**
- * http request 拦截器
+ * http 请求的统一拦截器
  */
 axios.interceptors.request.use(
   (config) => {
@@ -32,16 +38,18 @@ axios.interceptors.request.use(
 
 
 /**
- * http response 拦截器
+ * http 响应的拦截器
  */
 axios.interceptors.response.use(
   (response) => {
+    //相应状态码在2XX以内会触发
     if (response.data.errCode === 2) {
       console.log("过期");
     }
     return response;
   },
   (error) => {
+    //响应状态码超出2XX会触发这里，如3XX 4XX 5XX;
     console.log("请求出错：", error);
   }
 );
@@ -53,13 +61,14 @@ axios.interceptors.response.use(
  * @param url  请求url
  * @param params  请求参数
  * @returns {Promise}
+ * 
+ * 注意 axios--get的参数要么接在url后面，要么包一个对象放后面
  */
 export function get(url, params = {}) {
   return new Promise((resolve, reject) => {
-    axios.get(url, {
-        params: params,
-      }).then((response) => {
-        landing(url, params, response.data);
+    axios.get(url, {params: params}).then(
+        (response) => {
+        //landing(url, params, response.data);
         resolve(response.data);
       })
       .catch((error) => {
@@ -174,7 +183,7 @@ export default function (fecth, url, param) {
   });
 }
 
-//失败提示
+//失败信息集中处理（可以在外面封装一个专门集中处理错误的库，本项目不涉及过于复杂的请求错误，就不专门封装一层了
 function msag(err) {
   if (err && err.response) {
     switch (err.response.status) {

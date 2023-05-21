@@ -8,17 +8,26 @@
 - **在线网站**：[Go](https://codesandbox.io/s/elated-khorana-65jmr)
 - **TS重构版本**：[Go](https://codesandbox.io/s/elated-khorana-65jmr)
 
+
+
+## :city_sunrise:技术栈
+
+> **React 18 **+ **React Hooks ** + **Semi-Design 2.0**  +  **Axios**  + **Router V6** 
+
+
+
 ## ⭐️ 特性
 
-- 💪 60+高质量组件
-- 💕 完善的无障碍支持，为所有组件提供遵循 W3C 标准的键盘交互、焦点管理和语义化
-- 🎨 设计系统管理工具 Semi DSM，多达2000+ Design Token，快速定制你的专属设计系统
-- 🌍 国际化支持 17 种语言，提供完备的多语言、多时区、RTL支持
-- 💅 Code2Design，根据不同主题自动生成 Figma UI Kit，保持代码与设计同源
-- 🚀 强大的 Design2Code支持，设计稿一键转代码，快速构建应用
+- 💪 开箱即用，性能优异
+- 💕 完美符合前端MVVM规范要求，可维护性强
+- 🎨 组件基于Semi-Design的同一色彩管理，符合东方美学
+- :tent: Hooks手动封装集中式状态管理库 代替 Redux ，极小体积，实现9成功能
+- :desktop_computer: 前端路由映射基于Router V6 构架路由表，统一管理路由与页面
+- 🚀 手动封装Axios拦截器与请求的集中式管理 复用性与维护性再飞跃
 - ⚙️ 稳定的质量保障，覆盖单元测试、E2E测试、视觉回归测试等多种测试手段
-- 🥳 支持 SSR
-- 👏 使用 TypeScript, 良好的类型定义，基于 Foundation / Adapter 架构，源码易于阅读 / 贡献
+- 🥳 暂时没有配置SSR和SEO的相关解决方案，以后会加的！
+- 👏 暂时项目是基于JSX与Less的，以后会基于此进行TS的重构
+- :mount_fuji: 未来项目会做VUE-3的重构项目，敬请期待吧！
 
 ## 📦 开箱即用
 
@@ -28,7 +37,7 @@
 Git Clone xxx.com
 ```
 
-For more ways to use or contribute, please refer to: [md-editor-extension](https://github.com/imzbf/md-editor-extension)
+
 
 ## 💡 快速开始
 
