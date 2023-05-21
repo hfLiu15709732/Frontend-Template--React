@@ -1,10 +1,21 @@
 import React, { useEffect, useMemo } from 'react'
-import { Table, Avatar, Button } from '@douyinfe/semi-ui';
-import { IconMore } from '@douyinfe/semi-icons';
+import { Table, Avatar, Button, Toast, Popconfirm, Notification } from '@douyinfe/semi-ui';
+import ConstantTab from '../config/Constant';
+
 
 
 export default function TableComponents(props) {
 
+
+
+
+    const onDeleteConfirm = () => {
+        Notification.success(ConstantTab.DeleteSuccessNotify)
+    };
+
+    const onDeleteCancel = () => {
+        Notification.warning(ConstantTab.DeleteCanelNotify)
+    };
 
 
     const columns = [
@@ -54,7 +65,14 @@ export default function TableComponents(props) {
             dataIndex: 'delete',
             width:"80px",
             render: () => {
-                return <Button theme='solid' type='danger'>删除</Button>;
+                return  <Popconfirm
+                            title="确定是否要删除此设备？"
+                            content="此修改将不可逆"
+                            onConfirm={onDeleteConfirm}
+                            onCancel={onDeleteCancel}
+                        >
+                            <Button theme='solid' type='danger'>删除</Button>
+                        </Popconfirm>;
             },
         },
     ];

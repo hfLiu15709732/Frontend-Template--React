@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import { Layout, Nav, Button, Breadcrumb,  Avatar, SideSheet, Modal } from '@douyinfe/semi-ui';
-import { IconBell, IconHelpCircle, IconBytedanceLogo, IconCustomize, IconHistogram, IconDesktop, IconSetting } from '@douyinfe/semi-icons';
+import { IconBell, IconHelpCircle, IconBytedanceLogo, IconCustomize, IconHistogram, IconDesktop, IconSetting ,IconPhoneStroke,IconCommand} from '@douyinfe/semi-icons';
 import "../../static/css/mainPage.css"
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -59,7 +59,9 @@ export default function MainPage() {
 
 
 const routerChange=(val)=>{
-    navigating(`/index/${val.itemKey}`)
+    if(val.itemKey!="list"){
+        navigating(`/index/${val.itemKey}`);
+    }
 }
 
 
@@ -78,9 +80,17 @@ const routerChange=(val)=>{
                     style={{ maxWidth: 220, height: '100%' }}
                     items={[
                         { itemKey: 'adding', text: '添加设备', icon: <IconCustomize  size="large" /> },
-                        { itemKey: 'listDesktop', text: '桌面端列表信息', icon: <IconHistogram size="large" /> },
-                        { itemKey: 'listMobile', text: '移动端列表信息', icon: <IconHistogram size="large" /> },
-                        { itemKey: 'filter', text: '信息筛选', icon: <IconDesktop size="large" /> },
+                        {
+                            text: '设备管理',
+                            icon: <IconHistogram  />,
+                            itemKey:"list",
+                            items: [
+                                { itemKey: 'listDesktop', text: '桌面端列表信息', icon: <IconDesktop size="large" /> },
+                                , 
+                                { itemKey: 'listMobile', text: '移动端列表信息', icon: <IconPhoneStroke size="large" /> },
+                            ],
+                        },
+                        { itemKey: 'filter', text: '信息筛选', icon: <IconCommand size="large" /> },
                         { itemKey: 'setting', text: '个人设置', icon: <IconSetting size="large" /> },
                     ]}
                     header={{
