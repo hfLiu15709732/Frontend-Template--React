@@ -2,15 +2,16 @@
  * 网络请求配置
  */
 import axios from "axios";
+import msag from "./Response";
 
 axios.defaults.timeout = 100000;
-axios.defaults.baseURL = "http://test.mediastack.cn/";
+axios.defaults.baseURL = "127.0.0.1:7001/admin";
 
 
 //基本上都是axios的封装与配置
 //但本项目是对axios包装了两层（一层是axios的api，一层是统一处理一级封装函数）；留出更多处理数据的空间，也相对更规范些
 //最终是将集中处理的函数默认暴露出去，直接在requestUse的集中请求文件中调用他即可
-//没了解可以看axios的中文文档：https://www.axios-http.cn/
+//没了解过可以看axios的中文文档：https://www.axios-http.cn/
 
 /**
  * http 请求的统一拦截器
@@ -183,56 +184,6 @@ export default function (fecth, url, param) {
   });
 }
 
-//失败信息集中处理（可以在外面封装一个专门集中处理错误的库，本项目不涉及过于复杂的请求错误，就不专门封装一层了
-function msag(err) {
-  if (err && err.response) {
-    switch (err.response.status) {
-      case 400:
-        alert(err.response.data.error.details);
-        break;
-      case 401:
-        alert("未授权，请登录");
-        break;
-
-      case 403:
-        alert("拒绝访问");
-        break;
-
-      case 404:
-        alert("请求地址出错");
-        break;
-
-      case 408:
-        alert("请求超时");
-        break;
-
-      case 500:
-        alert("服务器内部错误");
-        break;
-
-      case 501:
-        alert("服务未实现");
-        break;
-
-      case 502:
-        alert("网关错误");
-        break;
-
-      case 503:
-        alert("服务不可用");
-        break;
-
-      case 504:
-        alert("网关超时");
-        break;
-
-      case 505:
-        alert("HTTP版本不受支持");
-        break;
-      default:
-    }
-  }
-}
 
 /**
  * 查看返回的数据

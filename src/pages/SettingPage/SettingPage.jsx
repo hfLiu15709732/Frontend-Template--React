@@ -14,7 +14,7 @@ const tmpData=[
   {title:"测试总数",index:"1237",isPositiove:true,Suffix:"份"},
   {title:"本月访客总量",index:"198",isPositiove:false,Suffix:"次"},
   {title:"本月测试数",index:"145",isPositiove:false,Suffix:"份"},
-  {title:"本月测试频率",index:"3.7",isPositiove:true,Suffix:"份/天"},
+  {title:"测试频率",index:"3.7",isPositiove:true,Suffix:"份/天"},
 ]
 const iconSrc=[
   "https://tse1-mm.cn.bing.net/th/id/OIP-C.fp_l68B10zn31U5SLS72SAAAAA?pid=ImgDet&rs=1",

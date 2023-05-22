@@ -1,25 +1,42 @@
 import React from 'react'
 import ReactECharts from 'echarts-for-react';
+import { getLineChart } from '../config/requestUse';
  
 
 
 
 
 
-var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+let legendData=['CPU测试数', 'GPU测试数', 'IOS测试数', 'Android测试数', '移动端比较数'];
+
+let date = new Date(), y = date.getFullYear(), m = date.getMonth();
 let lastDay = new Date(y, m + 1, 0);
 lastDay=parseInt(lastDay.toLocaleDateString().split("/")[2]);
 let daysArr=[];
-let tmpData={cpu:[456],gpu:[346],ios:[273],android:[176],mobile:[453]}
+let mainData={cpu:[456],gpu:[346],ios:[273],android:[176],mobile:[453]}
 for(let i=1;i<=lastDay;i++){
   daysArr.push(i);
   let tmp=parseInt(Math.random()*(10-0)+0)
-  tmpData.cpu.push(parseInt(Math.random()*(500-140)+140));
-  tmpData.gpu.push(parseInt(Math.random()*(500-140)+140));
-  tmpData.ios.push(parseInt(Math.random()*(500-140)+140));
-  tmpData.android.push(parseInt(Math.random()*(500-140)+140));
-  tmpData.mobile.push(parseInt(Math.random()*(500-140)+140));
+  mainData.cpu.push(parseInt(Math.random()*(500-140)+140));
+  mainData.gpu.push(parseInt(Math.random()*(500-140)+140));
+  mainData.ios.push(parseInt(Math.random()*(500-140)+140));
+  mainData.android.push(parseInt(Math.random()*(500-140)+140));
+  mainData.mobile.push(parseInt(Math.random()*(500-140)+140));
 }//生成虚拟数据 （正经的数据从服务端获取，放到状态里面去就行
+
+
+
+// getLineChart().then(
+//   (res)=>{
+//     daysArr=res.daysArr;
+//     mainData=res.mainData;
+//     legendData=res.legendData;
+//   },//成功的回调
+//   ()=>{
+
+//   },
+// )
+//上面注释的代码在有后端的情况下启用即可获得后端来的数据
 
 
 export default function LineChart() {
@@ -35,7 +52,7 @@ export default function LineChart() {
           }
         },
         legend: {
-          data: ['CPU测试数', 'GPU测试数', 'IOS测试数', 'Android测试数', '移动端比较数'],
+          data: legendData,
           top:"10px"
           
         },
@@ -68,51 +85,51 @@ export default function LineChart() {
         ],
         series: [
           {
-            name: 'CPU测试数',
+            name:legendData[0],
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: tmpData.cpu,
+            data: mainData.cpu,
             smooth:true,
           },
           {
-            name: 'GPU测试数',
+            name:legendData[1],
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: tmpData.gpu,
+            data: mainData.gpu,
             smooth:true,
           },
           {
-            name: 'IOS测试数',
+            name:legendData[2],
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: tmpData.ios,
+            data: mainData.ios,
             smooth:true,
           },
           {
-            name: 'Android测试数',
+            name: legendData[3],
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: tmpData.android,
+            data: mainData.android,
             smooth:true,
           },
           {
-            name: '移动端比较数',
+            name:legendData[4],
             type: 'line',
             stack: 'Total',
             label: {
@@ -123,7 +140,7 @@ export default function LineChart() {
             emphasis: {
               focus: 'series'
             },
-            data: tmpData.mobile,
+            data: mainData.mobile,
             smooth:true,
           }
         ]
