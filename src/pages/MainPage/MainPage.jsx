@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import { Layout, Nav, Button, Breadcrumb,  Avatar, SideSheet, Modal } from '@douyinfe/semi-ui';
-import { IconBell, IconHelpCircle, IconBytedanceLogo, IconCustomize, IconHistogram, IconDesktop, IconSetting ,IconPhoneStroke,IconCommand} from '@douyinfe/semi-icons';
+import { IconBell, IconHelpCircle, IconBytedanceLogo, IconCustomize, IconHistogram, IconDesktop, IconSetting ,IconPhoneStroke,IconCommand,IconApps} from '@douyinfe/semi-icons';
 import "../../static/css/mainPage.css"
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -116,6 +116,15 @@ const routerChange=(val)=>{
                                         marginRight: '12px',
                                     }}
                                     onClick={showPostMailDialog}
+                                />
+                                <Button
+                                    theme="borderless"
+                                    icon={<IconApps size="large" />}
+                                    style={{
+                                        color: 'var(--semi-color-text-2)',
+                                        marginRight: '12px',
+                                    }}
+                                    onClick={showQuestionDialog}
                                 />
                                 <Button
                                     theme="borderless"

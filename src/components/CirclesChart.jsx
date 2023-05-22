@@ -9,21 +9,39 @@ export default function CircleChart() {
         tooltip: {
           trigger: 'item'
         },
+        toolbox: {
+          show: true,
+          feature: {
+            dataView: { readOnly: false },
+            restore: {},
+            saveAsImage: {}
+          }
+        },
         legend: {
           orient: 'horizontal',
           bottom:"0px"
         },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '4%',
+          top:"15%",
+          containLabel: true
+        },
         series: [
           {
-            name: 'Access From',
+            top:"-50px",
+            left:"10.5%",
+
+            name: '当前设备类型统计',
             type: 'pie',
             radius: '50%',
             data: [
-              { value: 1048, name: 'Search Engine' },
-              { value: 735, name: 'Direct' },
-              { value: 580, name: 'Email' },
-              { value: 484, name: 'Union Ads' },
-              { value: 300, name: 'Video Ads' }
+              { value: 1048, name: '桌面-CPU' },
+              { value: 735, name: '桌面-GPU' },
+              { value: 580, name: '移动端-Android' },
+              { value: 484, name: '移动端-IOS' },
+              { value: 300, name: '移动端比较' }
             ],
             emphasis: {
               itemStyle: {

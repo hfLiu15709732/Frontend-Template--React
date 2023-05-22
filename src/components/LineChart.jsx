@@ -3,11 +3,24 @@ import ReactECharts from 'echarts-for-react';
  
 
 
-// registerTheme('default', {
-//     defaultColor: '#505050',
-//     // 颜色序列
-//     colors10: ["#83A", "#5AD8A6", "#5D7092", "#F6BD16", "#E86452", "#6DC8EC", "#945FB9", "#FF9845", "#1E9493", "#FF99C3"],
-//   })
+
+
+
+var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+let lastDay = new Date(y, m + 1, 0);
+lastDay=parseInt(lastDay.toLocaleDateString().split("/")[2]);
+let daysArr=[];
+let tmpData={cpu:[456],gpu:[346],ios:[273],android:[176],mobile:[453]}
+for(let i=1;i<=lastDay;i++){
+  daysArr.push(i);
+  let tmp=parseInt(Math.random()*(10-0)+0)
+  tmpData.cpu.push(parseInt(Math.random()*(500-140)+140));
+  tmpData.gpu.push(parseInt(Math.random()*(500-140)+140));
+  tmpData.ios.push(parseInt(Math.random()*(500-140)+140));
+  tmpData.android.push(parseInt(Math.random()*(500-140)+140));
+  tmpData.mobile.push(parseInt(Math.random()*(500-140)+140));
+}//生成虚拟数据 （正经的数据从服务端获取，放到状态里面去就行
+
 
 export default function LineChart() {
 
@@ -22,11 +35,17 @@ export default function LineChart() {
           }
         },
         legend: {
-          data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+          data: ['CPU测试数', 'GPU测试数', 'IOS测试数', 'Android测试数', '移动端比较数'],
+          top:"10px"
+          
         },
         toolbox: {
+          show: true,
           feature: {
-            saveAsImage: {}
+            saveAsImage: {},
+            dataView: { readOnly: false },
+            magicType: { type: ["stack","bar"] },
+            restore: {},
           }
         },
         grid: {
@@ -39,7 +58,7 @@ export default function LineChart() {
           {
             type: 'category',
             boundaryGap: false,
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            data: daysArr
           }
         ],
         yAxis: [
@@ -49,51 +68,51 @@ export default function LineChart() {
         ],
         series: [
           {
-            name: 'Email',
+            name: 'CPU测试数',
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: [120, 132, 101, 134, 90, 230, 210],
+            data: tmpData.cpu,
             smooth:true,
           },
           {
-            name: 'Union Ads',
+            name: 'GPU测试数',
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: [220, 182, 191, 234, 290, 330, 310],
+            data: tmpData.gpu,
             smooth:true,
           },
           {
-            name: 'Video Ads',
+            name: 'IOS测试数',
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: [150, 232, 201, 154, 190, 330, 410],
+            data: tmpData.ios,
             smooth:true,
           },
           {
-            name: 'Direct',
+            name: 'Android测试数',
             type: 'line',
             stack: 'Total',
             areaStyle: {},
             emphasis: {
               focus: 'series'
             },
-            data: [320, 332, 301, 334, 390, 330, 320],
+            data: tmpData.android,
             smooth:true,
           },
           {
-            name: 'Search Engine',
+            name: '移动端比较数',
             type: 'line',
             stack: 'Total',
             label: {
@@ -104,7 +123,7 @@ export default function LineChart() {
             emphasis: {
               focus: 'series'
             },
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            data: tmpData.mobile,
             smooth:true,
           }
         ]
@@ -113,7 +132,7 @@ export default function LineChart() {
 
   return (
     <div>
-        <ReactECharts option={option} />
+        <ReactECharts option={option} style={{height:"370px"}}/>
     </div>
   )
 }
