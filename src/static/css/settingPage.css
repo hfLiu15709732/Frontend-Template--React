@@ -51,6 +51,7 @@
   border-radius: 8px !important;
 }
 .settingPage .dividerBox {
+  margin-bottom: 20px !important;
   color: rgba(var(--semi-blue-5), 1);
   padding-left: 10px !important;
   margin-right: 10px;

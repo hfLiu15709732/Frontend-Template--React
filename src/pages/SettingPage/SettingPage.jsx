@@ -85,26 +85,26 @@ export default function SettingPage() {
       <div className='chartGroup'>
         <Row gutter={{ xs: 12, sm: 12, md: 12, lg: 18, xl: 18, xxl: 18 }} >
           <Col xs={24} sm={24} md={24} lg={16} xl={16} xxl={16}>
-            <div className='columnChart'>
-              <Divider margin='12px' align='left' className='dividerBox'>
+            <Divider margin='12px' align='left' className='dividerBox'>
                 &nbsp;&nbsp;
                 <IconExport  size='extra-large'/>
                 <span className='dividerTitle'>设备添加统计</span>
                 &nbsp;&nbsp;
-              </Divider>
+            </Divider>
+            <div className='columnChart'>
               <div>
                 <ColumnChart/>
               </div>
             </div>
           </Col>
           <Col xs={24} sm={24} md={24} lg={8} xl={8} xxl={8}>
-            <div className='circleChart'>
               <Divider margin='12px' align='left' className='dividerBox'>
                 &nbsp;&nbsp;
                 <IconGallery  size='extra-large'/>
                 <span className='dividerTitle'>设备类型统计</span>
                 &nbsp;&nbsp;
               </Divider>
+            <div className='circleChart'>
               <div>
                 <CircleChart/>
               </div>
