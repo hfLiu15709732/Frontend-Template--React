@@ -34,7 +34,7 @@
 ### 克隆项目
 
 ```
-Git Clone xxx.com
+Git Clone https://gitee.com/hfliu15709732/backend_template.git
 ```
 
 
