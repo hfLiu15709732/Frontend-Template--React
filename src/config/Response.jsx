@@ -1,26 +1,53 @@
 
-
-let ResponseTab={
-    ERROR_CODE:{
-        400: '请求失败',
-        401: '无权访问',
-        403: '紧张访问',
-        404: '请求不存在',
-        405: '请求方法错误',
-        406: '请求的格式错误',
-        410: '资源已删除',
-        422: '验证错误',
-        500: '服务器发生错误',
-        502: '网关错误',
-        503: '服务器暂时过载或维护',
-        504: '网关超时'
-    },
-    TOKEN_ERROR_CODE:{
-        506: '请先登录',
-        507: '请重新登录',
-        508: '登录已过期'
+function msag(err) {
+    if (err && err.response) {
+      switch (err.response.status) {
+        case 400:
+          alert(err.response.data.error.details);
+          break;
+        case 401:
+          alert("未授权，请登录");
+          break;
+  
+        case 403:
+          alert("拒绝访问");
+          break;
+  
+        case 404:
+          alert("请求地址出错");
+          break;
+  
+        case 408:
+          alert("请求超时");
+          break;
+  
+        case 500:
+          alert("服务器内部错误");
+          break;
+  
+        case 501:
+          alert("服务未实现");
+          break;
+  
+        case 502:
+          alert("网关错误");
+          break;
+  
+        case 503:
+          alert("服务不可用");
+          break;
+  
+        case 504:
+          alert("网关超时");
+          break;
+  
+        case 505:
+          alert("HTTP版本不受支持");
+          break;
+        default:
+      }
     }
   }
 
-export default ResponseTab
+  export default msag;
   

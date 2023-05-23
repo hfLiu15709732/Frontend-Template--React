@@ -8,12 +8,15 @@ import "../../static/css/listPageDesktop.css"
 
 // const rowsData=[["设备信息","name"],["单核测试","size"],["多核测试","owner"],["更新日期","updateTime"]];
 
+const pngIntel="https://ts1.cn.mm.bing.net/th/id/R-C.90ccbb626f2f4f9522d6b8028a62275b?rik=rh5Kuv6Wq7TcFw&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f00%2f97%2f65%2f0156f3261dba1d2.jpg&ehk=8aJj30dsQ1KSyicUc6vuSz8EK%2b1xKJkUNGVLtxNGKUo%3d&risl=&pid=ImgRaw&r=0";
+
+const pngAmd="https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1"
 
 const data = [
   {
       key: '1',
-      name: 'Semi Design 设计稿.fig',
-      nameIconSrc: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1',
+      name: 'AMD Ryzen Threadripper 3990X',
+      nameIconSrc:pngAmd,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',
@@ -21,8 +24,8 @@ const data = [
   },
   {
       key: '2',
-      name: 'Semi Design 分享演示文稿',
-      nameIconSrc: 'https://ts1.cn.mm.bing.net/th/id/R-C.90ccbb626f2f4f9522d6b8028a62275b?rik=rh5Kuv6Wq7TcFw&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f00%2f97%2f65%2f0156f3261dba1d2.jpg&ehk=8aJj30dsQ1KSyicUc6vuSz8EK%2b1xKJkUNGVLtxNGKUo%3d&risl=&pid=ImgRaw&r=0',
+      name: 'AMD Ryzen Threadripper Pro 3995WX',
+      nameIconSrc: pngAmd,
       size: '2M',
       owner: '郝宣',
       updateTime: '2020-01-17 05:31',
@@ -30,8 +33,8 @@ const data = [
   },
   {
       key: '3',
-      name: '设计文档',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      name: 'Intel Xeon Platinum 8280L',
+      nameIconSrc: pngIntel,
       size: '34KB',
       owner: 'Zoey Edwards',
       updateTime: '2020-01-26 11:01',
@@ -39,8 +42,8 @@ const data = [
   },
   {
       key: '4',
-      name: 'Semi Pro 设计稿.fig',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png',
+      name: 'AMD Epyc 7702P',
+      nameIconSrc: pngAmd,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',
@@ -48,8 +51,8 @@ const data = [
   },
   {
       key: '5',
-      name: 'Semi Pro 分享演示文稿',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      name: 'AMD Ryzen Threadripper 3970X',
+      nameIconSrc:pngAmd,
       size: '2M',
       owner: '郝宣',
       updateTime: '2020-01-17 05:31',
@@ -57,8 +60,8 @@ const data = [
   },
   {
       key: '6',
-      name: 'Semi Pro 设计文档',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      name: 'Intel Core i9-13900KS',
+      nameIconSrc: pngIntel,
       size: '34KB',
       owner: 'Zoey Edwards',
       updateTime: '2020-01-26 11:01',
@@ -66,8 +69,8 @@ const data = [
   },
   {
       key: '7',
-      name: 'Semi Design 分享演示文稿',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      name: 'AMD Ryzen Threadripper Pro 5965WX',
+      nameIconSrc: pngAmd,
       size: '2M',
       owner: '郝宣',
       updateTime: '2020-01-17 05:31',
@@ -75,8 +78,8 @@ const data = [
   },
   {
       key: '8',
-      name: '设计文档',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      name: 'Intel Core i9-13900KF',
+      nameIconSrc: pngAmd,
       size: '34KB',
       owner: 'Zoey Edwards',
       updateTime: '2020-01-26 11:01',
@@ -84,8 +87,8 @@ const data = [
   },
   {
       key: '9',
-      name: 'Semi Pro 设计稿.fig',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png',
+      name: 'AMD Ryzen 9 7950X',
+      nameIconSrc: pngAmd,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',
@@ -93,8 +96,8 @@ const data = [
   },
   {
       key: '10',
-      name: 'Semi Pro 分享演示文稿',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      name: 'AMD Ryzen Threadripper 3960X',
+      nameIconSrc: pngAmd,
       size: '2M',
       owner: '郝宣',
       updateTime: '2020-01-17 05:31',
@@ -102,8 +105,8 @@ const data = [
   },
   {
       key: '11',
-      name: 'Semi Pro 设计文档',
-      nameIconSrc: 'https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png',
+      name: 'Intel Core i9-13900F',
+      nameIconSrc: pngIntel,
       size: '34KB',
       owner: 'Zoey Edwards',
       updateTime: '2020-01-26 11:01',
@@ -111,8 +114,8 @@ const data = [
   },
   {
       key: '12',
-      name: 'Semi Design 设计稿.fig',
-      nameIconSrc: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1',
+      name: 'Intel Xeon W-3175X',
+      nameIconSrc: pngIntel,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',
@@ -120,8 +123,8 @@ const data = [
   },
   {
       key: '13',
-      name: 'Semi Design 分享演示文稿',
-      nameIconSrc: 'https://ts1.cn.mm.bing.net/th/id/R-C.90ccbb626f2f4f9522d6b8028a62275b?rik=rh5Kuv6Wq7TcFw&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f00%2f97%2f65%2f0156f3261dba1d2.jpg&ehk=8aJj30dsQ1KSyicUc6vuSz8EK%2b1xKJkUNGVLtxNGKUo%3d&risl=&pid=ImgRaw&r=0',
+      name: 'Intel Core i7-13700KF',
+      nameIconSrc: pngIntel,
       size: '2M',
       owner: '郝宣',
       updateTime: '2020-01-17 05:31',
@@ -129,8 +132,8 @@ const data = [
   },
   {
       key: '14',
-      name: 'Semi Design 设计稿.fig',
-      nameIconSrc: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1',
+      name: 'AMD Ryzen 9 7900X',
+      nameIconSrc: pngAmd,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',
@@ -138,8 +141,8 @@ const data = [
   },
   {
       key: '15',
-      name: 'Semi Design 分享演示文稿',
-      nameIconSrc: 'https://ts1.cn.mm.bing.net/th/id/R-C.90ccbb626f2f4f9522d6b8028a62275b?rik=rh5Kuv6Wq7TcFw&riu=http%3a%2f%2fbpic.588ku.com%2felement_pic%2f00%2f97%2f65%2f0156f3261dba1d2.jpg&ehk=8aJj30dsQ1KSyicUc6vuSz8EK%2b1xKJkUNGVLtxNGKUo%3d&risl=&pid=ImgRaw&r=0',
+      name: 'AMD Ryzen 9 5950X',
+      nameIconSrc: pngAmd,
       size: '2M',
       owner: '郝宣',
       updateTime: '2020-01-17 05:31',
@@ -147,8 +150,8 @@ const data = [
   },
   {
       key: '16',
-      name: 'Semi Design 设计稿.fig',
-      nameIconSrc: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1',
+      name: 'Intel Core i9-7980XE',
+      nameIconSrc: pngIntel,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',
@@ -156,8 +159,8 @@ const data = [
   },
   {
       key: '17',
-      name: 'Semi Design 设计稿.fig',
-      nameIconSrc: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1',
+      name: 'Intel Xeon W-3275M',
+      nameIconSrc: pngIntel,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',
@@ -165,8 +168,8 @@ const data = [
   },
   {
       key: '18',
-      name: 'Semi Design 设计稿.fig',
-      nameIconSrc: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.13xj1dN1pnqy88QVAXpQGQHaHw?pid=ImgDet&rs=1',
+      name: 'Intel Xeon W-3275',
+      nameIconSrc: pngIntel,
       size: '2M',
       owner: '姜鹏志',
       updateTime: '2020-02-02 05:13',

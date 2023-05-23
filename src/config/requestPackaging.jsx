@@ -3,6 +3,8 @@
  */
 import axios from "axios";
 import msag from "./Response";
+import { Notification } from "@douyinfe/semi-ui";
+import ConstantTab from "./Constant";
 
 axios.defaults.timeout = 100000;
 axios.defaults.baseURL = "127.0.0.1:7001/admin";
@@ -19,13 +21,22 @@ axios.defaults.baseURL = "127.0.0.1:7001/admin";
 axios.interceptors.request.use(
   (config) => {
     const tokenJson = localStorage.getItem('token');
-    //本项目的用户信息存储到localStorage里面了 也可以用store，因为一般登录后还是会将登录信息存到redux里面一份，但不存到localsStorage的话，当前页面刷新时，redux中的内容会消失。
-    const tokenStr=JSON.stringify(tokenJson);
-    const {token,openID}=tokenStr;
-    if(token&&Date.now()-openID<=3600000*2){
-        config.headers.jwt_token = token //请求头加上token信息
+    if(tokenJson){
+      //本项目的用户信息存储到localStorage里面了 也可以用store，因为一般登录后还是会将登录信息存到redux里面一份，
+      //但不存到localsStorage的话，当前页面刷新时，redux中的内容会消失。
+      const tokenStr=JSON.stringify(tokenJson);
+      const {token,openID}=tokenStr;
+      if(token&&Date.now()-openID<=3600000*2){
+          config.headers.jwt_token = token //请求头加上token信息
+      }
+      //检验token是否存在，和openID是否过期（这里设的是2天，自己根据自己的项目改时间戳就行）
+      else{
+        Notification.error(ConstantTab.TokenExpireNotify)
+      }
     }
-    //检验token是否存在，和openID是否过期（这里设的是2天，自己根据自己的项目改时间戳就行）
+    else{
+      Notification.error(ConstantTab.TokenDisNotify)
+    }
 
     return config
   },

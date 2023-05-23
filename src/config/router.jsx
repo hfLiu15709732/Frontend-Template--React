@@ -42,7 +42,7 @@ let routerTab=[
 			},
 			{
 				index:true,
-				element:<Navigate to="/index/adding"/>
+				element:<Navigate to="/index/setting"/>
 			},
 		]
 	}

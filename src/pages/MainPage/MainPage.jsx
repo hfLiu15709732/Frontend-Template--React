@@ -1,8 +1,10 @@
-import React,{useState} from 'react';
-import { Layout, Nav, Button, Breadcrumb,  Avatar, SideSheet, Modal } from '@douyinfe/semi-ui';
+import React,{useEffect, useState} from 'react';
+import { Layout, Nav, Button, Breadcrumb,  Avatar, SideSheet, Modal, Notification } from '@douyinfe/semi-ui';
 import { IconBell, IconHelpCircle, IconBytedanceLogo, IconCustomize, IconHistogram, IconDesktop, IconSetting ,IconPhoneStroke,IconCommand,IconApps} from '@douyinfe/semi-icons';
 import "../../static/css/mainPage.css"
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+
+import ConstantTab from '../../config/Constant';
 
 export default function MainPage() {
 
@@ -54,7 +56,23 @@ export default function MainPage() {
 //组件交互回调函数区域
 
 
-
+useEffect(()=>{
+    const tokenJson = localStorage.getItem('token');
+    if(tokenJson){
+        const tokenStr=JSON.parse(tokenJson);
+        const {token,openID}=tokenStr;
+        if(token&&Date.now()-openID<=3600000*2){
+        }
+        else{
+            Notification.error(ConstantTab.TokenExpireNotify)
+            navigating("/login");
+        }
+    }
+    else{
+        Notification.error(ConstantTab.TokenDisNotify)
+        navigating("/login");
+    }
+},[])
 
 
 

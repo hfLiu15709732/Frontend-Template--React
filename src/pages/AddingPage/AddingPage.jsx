@@ -135,10 +135,10 @@ export default function AddingPage() {
 
           <Row>
             <Col span={12}>
-              <Form.Input field='name' style={{ width: 350 }} label='单核分数' trigger='blur' placeholder='请输入姓名'/>
+              <Form.InputNumber field='name' style={{ width: 350 }} label='单核分数' trigger='blur' placeholder='请输入姓名'/>
             </Col>
             <Col span={12}>
-              <Form.Input field='name' style={{ width: 350 }} label='多核分数' trigger='blur' placeholder='请输入姓名'/>
+              <Form.InputNumber field='name' style={{ width: 350 }} label='多核分数' trigger='blur' placeholder='请输入姓名'/>
             </Col>
           </Row>
 
@@ -167,7 +167,9 @@ export default function AddingPage() {
                   </Form.Upload>
               </Col>
               <Col span={12}>
-                <Form.TextArea    style={{ width:350, height: 120 }} field='description' label='申请理由（TextArea）' placeholder='请填写申请资源理由'/>
+                <Form.TextArea    style={{ width:350, height: 120 }} field='description' 
+                label='申请理由（TextArea）' placeholder='请填写申请资源理由' maxCount={100}
+                />
             </Col>
           </Row>
 

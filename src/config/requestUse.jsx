@@ -1,6 +1,6 @@
 import http from "./requestPackaging";//引入axios的封装文件
 import { Notification} from '@douyinfe/semi-ui';
-import servicePath from "./apiUrl";  //引入请求路径库
+import servicePath from "./apiUrls";  //引入请求路径库
 
 
 
@@ -10,7 +10,7 @@ import servicePath from "./apiUrl";  //引入请求路径库
  */
 const getArticleList=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/article/home/index').then(res => {
+    http("get",servicePath.getArticleList).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -22,7 +22,7 @@ const getArticleList=()=>{
 
 const registerByUserName=()=>{
   return new Promise((resolve, reject) => {
-    http("post",'/register/username').then(res => {
+    http("post",servicePath.registerByUserName).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -33,7 +33,7 @@ const registerByUserName=()=>{
 
 const registerByEmail=()=>{
   return new Promise((resolve, reject) => {
-    http("post",'/register/email').then(res => {
+    http("post",servicePath.registerByEmail).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -45,7 +45,7 @@ const registerByEmail=()=>{
 
 const loginByUserName=()=>{
   return new Promise((resolve, reject) => {
-    http("post",'/login/username').then(res => {
+    http("post",servicePath.loginByUserName).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -58,7 +58,7 @@ const loginByUserName=()=>{
 
 const loginByEmail=()=>{
   return new Promise((resolve, reject) => {
-    http("post",'/login/email').then(res => {
+    http("post",servicePath.loginByEmail).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -71,7 +71,7 @@ const loginByEmail=()=>{
 
 const getTableForCPU_R23=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/login/email').then(res => {
+    http("get",servicePath.getTableForCPU_R23).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -83,7 +83,7 @@ const getTableForCPU_R23=()=>{
 
 const getTableForMobile_AVG_CPU=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/table/mobile/avgcpu').then(res => {
+    http("get",servicePath.getTableForMobile_AVG_CPU).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -100,7 +100,7 @@ const getTableForMobile_AVG_CPU=()=>{
 
 const getTableFilter=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/table/mobile/filter').then(res => {
+    http("get",servicePath.getTableFilter).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -112,7 +112,7 @@ const getTableFilter=()=>{
 
 const getLineChart=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/chart/linechart').then(res => {
+    http("get",servicePath.getLineChart).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -125,7 +125,7 @@ const getLineChart=()=>{
 
 const getPaiChart=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/chart/paichart').then(res => {
+    http("get",servicePath.getPaiChart).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -138,7 +138,7 @@ const getPaiChart=()=>{
 
 const getColumnChart=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/table/mobile/filter').then(res => {
+    http("get",servicePath.getColumnChart).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);
@@ -151,7 +151,7 @@ const getColumnChart=()=>{
 
 const getCardData=()=>{
   return new Promise((resolve, reject) => {
-    http("get",'/card/data').then(res => {
+    http("get",servicePath.getCardData).then(res => {
       resolve (res);
     },error => {
       console.log("网络异常~",error);

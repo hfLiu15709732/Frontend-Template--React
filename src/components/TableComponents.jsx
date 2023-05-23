@@ -158,7 +158,7 @@ export default function TableComponents(props) {
 
     const pagination = useMemo(
         () => ({
-            pageSize: 6,
+            pageSize: 10,
         }),
         []
     );
