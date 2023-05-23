@@ -12,7 +12,7 @@
 
 ## :city_sunrise:技术栈
 
-> **React 18 **+ **React Hooks ** + **Semi-Design 2.0**  +  **Axios**  + **Router V6** 
+> **React 18 + React Hooks  + Semi-Design 2.0  +  Axios  + Router V6** 
 
 
 
@@ -107,5 +107,5 @@ $ yarn run build
 
 ## 🎈 协议
 
-Semi UI 使用 [MIT 协议](https://github.com/DouyinFE/semi-design/blob/main/LICENSE)
+本项目 使用 [MIT 协议](https://github.com/DouyinFE/semi-design/blob/main/LICENSE)
 
