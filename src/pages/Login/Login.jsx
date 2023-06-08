@@ -26,17 +26,77 @@ export default function Login() {
     const [registerPwd2,setRegisterPwd2]=useState("");
 
 
-    const [namePass,setNamePass]=useState(false);
+    const [namePass,setNamePass]=useState();
 
-    const [pwdPass,setPwdPass]=useState(false);
+    const [pwdPass,setPwdPass]=useState();
 
-    const [pwd2Pass,setPwd2Pass]=useState(false);
+    const [pwd2Pass,setPwd2Pass]=useState();
 
-    const [emailPass,setEmailPass]=useState(false);
+    const [emailPass,setEmailPass]=useState();
 
 
-    const [registerPage,setRegisterPage]=useState(false);
+    const [registerPage,setRegisterPage]=useState();
     //页面局部状态管理
+
+
+    const registerNameBlur=()=>{
+
+        const re = /^[\w\d]{4,15}$/;
+        if(re.test(registerName)==true){
+            setNamePass(true)
+        }
+        else{
+            Toast.error(ConstantTab.userWrongToast)
+            setNamePass(false)
+        }
+    }
+
+    const registerPwdBlur=()=>{
+        const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,18}$/;
+        if(re.test(registerpassword)==true){
+            setPwdPass(true)
+        }
+        else{
+            Toast.error(ConstantTab.pwdWrongToast)
+            setPwdPass(false)
+        }
+    }
+    const registerPwd2Blur=()=>{
+        if(registerPwd2!=registerpassword){
+            Toast.error(ConstantTab.pwd2WrongToast)
+            setPwd2Pass(false)
+        }
+        else{
+            setPwd2Pass(true)
+        }
+    }
+    const registerEmailBlur=()=>{
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(re.test(registerEmail)==true){
+            setEmailPass(true)
+        }
+        else{
+            Toast.error(ConstantTab.emailWrongToast)
+            setEmailPass(false)
+        }
+    }
+
+
+    const registerNameChange=(val)=>{
+            setRegisterName(val)
+    }
+
+    const registerPwdChange=(val)=>{
+            setRegisterPassword(val)
+    }
+    const registerPwd2Change=(val)=>{
+            setRegisterPwd2(val)
+    }
+    const registerEmailChange=(val)=>{
+            setRegisterEmail(val)
+    }
+
+
 
 
 
@@ -104,63 +164,6 @@ export default function Login() {
 
 
 
-    const registerNameBlur=()=>{
-
-        const re = /^[\w\d]{4,15}$/;
-        if(re.test(registerName)==true){
-            setNamePass(true)
-        }
-        else{
-            Toast.error(ConstantTab.userWrongToast)
-            setNamePass(false)
-        }
-    }
-
-    const registerPwdBlur=()=>{
-        const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,18}$/;
-        if(re.test(registerpassword)==true){
-            setPwdPass(true)
-        }
-        else{
-            Toast.error(ConstantTab.pwdWrongToast)
-            setPwdPass(false)
-        }
-    }
-    const registerPwd2Blur=()=>{
-        if(registerPwd2!=registerpassword){
-            Toast.error(ConstantTab.pwd2WrongToast)
-            setPwd2Pass(false)
-        }
-        else{
-            setPwd2Pass(true)
-        }
-    }
-    const registerEmailBlur=()=>{
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if(re.test(registerEmail)==true){
-            setEmailPass(true)
-        }
-        else{
-            Toast.error(ConstantTab.emailWrongToast)
-            setEmailPass(false)
-        }
-    }
-
-
-    const registerNameChange=(val)=>{
-            setRegisterName(val)
-    }
-
-    const registerPwdChange=(val)=>{
-            setRegisterPassword(val)
-    }
-    const registerPwd2Change=(val)=>{
-            setRegisterPwd2(val)
-    }
-    const registerEmailChange=(val)=>{
-            setRegisterEmail(val)
-    }
-
 
 
 
@@ -200,24 +203,28 @@ export default function Login() {
                 <Text link style={{marginBottom:14}}>昵称：</Text>
                 <Input prefix={<IconUser />} showClear placeholder="请输入你的昵称" 
                 onBlur={registerNameBlur} onChange={registerNameChange}
+                validateStatus={namePass==false ? "error" : "default"}
                 />
             </div >
             <div style={{marginTop:20,marginBottom:25}}>
                 <Text link style={{marginBottom:14}}>邮箱：</Text>
                 <Input prefix={<IconMail />} showClear placeholder="请输入你的注册邮箱" 
                 onBlur={registerEmailBlur} onChange={registerEmailChange}
+                validateStatus={emailPass==false ? "error" : "default"}
                 />
             </div>
             <div style={{marginTop:20,marginBottom:25}}>
                 <Text link style={{marginBottom:14}}>密码：</Text>
                 <Input prefix={<IconUnlock />} showClear placeholder="请输入你的密码" mode='password'
                 onBlur={registerPwdBlur} onChange={registerPwdChange}
+                validateStatus={pwdPass==false ? "error" : "default"}
                 />  
             </div>
             <div style={{marginTop:20,marginBottom:25}}>
                 <Text link style={{marginBottom:14}}>确认密码：</Text>
                 <Input prefix={<IconVerify />} showClear placeholder="请确认你的密码" mode='password'
                 onBlur={registerPwd2Blur} onChange={registerPwd2Change}
+                validateStatus={pwd2Pass==false ? "error" : "default"}
                 /> 
             </div>
             <div style={{display:'flex',flexDirection:"row-reverse"}}>

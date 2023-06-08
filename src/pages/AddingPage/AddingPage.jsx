@@ -172,6 +172,16 @@ export default function AddingPage() {
                 />
             </Col>
           </Row>
+          <Row>
+            <Col span={12}></Col>
+            <Col span={12}>
+              <div className='bottomBtn'>
+                <Button size='large' theme='solid' type='primary'>&nbsp;提交信息&nbsp;</Button>
+                <Button size='large' theme='solid' type='danger'>&nbsp;重置信息&nbsp;</Button>
+
+              </div>
+            </Col>
+          </Row>
 
       </Form>
     </div>
