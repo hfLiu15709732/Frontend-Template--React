@@ -80,7 +80,6 @@ export function get(url, params = {}) {
   return new Promise((resolve, reject) => {
     axios.get(url, {params: params}).then(
         (response) => {
-        //landing(url, params, response.data);
         resolve(response.data);
       })
       .catch((error) => {
@@ -100,7 +99,6 @@ export function post(url, data) {
   return new Promise((resolve, reject) => {
     axios.post(url, data).then(
       (response) => {
-        //关闭进度条
         resolve(response.data);
       },
       (err) => {
@@ -110,46 +108,11 @@ export function post(url, data) {
   });
 }
 
-/**
- * 封装patch请求
- * @param url
- * @param data
- * @returns {Promise}
- */
-export function patch(url, data = {}) {
-  return new Promise((resolve, reject) => {
-    axios.patch(url, data).then(
-      (response) => {
-        resolve(response.data);
-      },
-      (err) => {
-        msag(err);
-        reject(err);
-      }
-    );
-  });
-}
 
-/**
- * 封装put请求
- * @param url
- * @param data
- * @returns {Promise}
- */
 
-export function put(url, data = {}) {
-  return new Promise((resolve, reject) => {
-    axios.put(url, data).then(
-      (response) => {
-        resolve(response.data);
-      },
-      (err) => {
-        msag(err);
-        reject(err);
-      }
-    );
-  });
-}
+
+
+
 
 //统一接口处理，返回数据
 /**
@@ -193,17 +156,5 @@ export default function (fecth, url, param) {
         break;
     }
   });
-}
-
-
-/**
- * 查看返回的数据
- * @param url
- * @param params
- * @param data
- */
-function landing(url, params, data) {
-  if (data.code === -1) {
-  }
 }
 
