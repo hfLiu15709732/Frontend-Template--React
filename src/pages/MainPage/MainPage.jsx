@@ -5,6 +5,7 @@ import "../../static/css/mainPage.css"
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 import ConstantTab from '../../config/Constant';
+import { userInfoStore } from '../../Store/userInfo';
 
 export default function MainPage() {
 
@@ -18,6 +19,7 @@ export default function MainPage() {
   const [callBackVisible, setCallBackVisible] = useState(false);
   const [questionVisible, setQuestionVisible] = useState(false);
   const [postMailVisible, setPostMailVisible] = useState(false);
+  const {userInfo} = userInfoStore();
 
 
 
@@ -154,8 +156,9 @@ const routerChange=(val)=>{
                                     onClick={showQuestionDialog}
                                 />
                                 <Avatar color="orange" size="small" onClick={()=>{ navigating(`/index/setting`)}}>
-                                    LHF
+                                    {userInfo.userName.slice(0,3)}
                                 </Avatar>
+                                {/* 头像默认展示用户名前三位 */}
                             </>
                         }
                     ></Nav>

@@ -5,7 +5,7 @@ import "../../static/css/settingPage.css"
 import LineChart from '../../components/LineChart';
 import ColumnChart from '../../components/ColumnChart';
 import CircleChart from '../../components/CirclesChart';
-
+import { userInfoStore } from '../../Store/userInfo';
 const { Meta } = Card;
 
 
@@ -26,9 +26,15 @@ const iconSrc=[
 ]
 
 export default function SettingPage() {
+
+
+  const {userInfo} = userInfoStore();
+
+
+
   return (
     <div className='settingPage'>
-      <div className='welcomeTitle'>Welcome Back &nbsp;&nbsp;LHF</div>
+      <div className='welcomeTitle'>Welcome Back &nbsp;&nbsp;{userInfo.userName.slice(0,8)}</div>
       {/* 这里的姓名应该在store里面或者在localstorage里面 */}
       <div className='cardGroup'>
       <Row gutter={{ xs: 12, sm: 12, md: 12, lg: 18, xl: 18, xxl: 18 }} >
